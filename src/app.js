@@ -10,14 +10,15 @@ app.use(helmet());
 app.use(compression());
 
 //init db
+require("./dbs/init.mongodb.lv0");
 
 //init routes
 app.get("/", (req, res, next) => {
-  const strCompress = "Hello Fantipjs";
+  //   const strCompress = "Hello Fantipjs";
 
   return res.status(200).json({
     message: "Welcome Fantipjs",
-    metadata: strCompress.repeat(10000),
+    // metadata: strCompress.repeat(10000),
   });
 });
 
